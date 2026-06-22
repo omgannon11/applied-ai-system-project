@@ -6,8 +6,9 @@ def get_range_for_difficulty(difficulty: str):
         return 1, 20
     if difficulty == "Normal":
         return 1, 100
+    # FIXME: Hard range was 1-50, which is easier than Normal (1-100); changed to 1-500 to make Hard actually harder
     if difficulty == "Hard":
-        return 1, 50
+        return 1, 500
     return 1, 100
 
 
@@ -33,18 +34,11 @@ def check_guess(guess, secret):
     if guess == secret:
         return "Win", "🎉 Correct!"
 
-    try:
-        if guess > secret:
-            return "Too High", "📈 Go HIGHER!"
-        else:
-            return "Too Low", "📉 Go LOWER!"
-    except TypeError:
-        g = str(guess)
-        if g == secret:
-            return "Win", "🎉 Correct!"
-        if g > secret:
-            return "Too High", "📈 Go HIGHER!"
-        return "Too Low", "📉 Go LOWER!"
+    # FIXME: messages were swapped — "Go HIGHER!" was returned when guess was too high, and "Go LOWER!" when too low, always misleading the player
+    if guess > secret:
+        return "Too High", "📉 Go LOWER!"
+    else:
+        return "Too Low", "📈 Go HIGHER!"
 
 
 def update_score(current_score: int, outcome: str, attempt_number: int):
@@ -106,8 +100,9 @@ if "history" not in st.session_state:
 
 st.subheader("Make a guess")
 
+# FIXME: hint message hardcoded "1 and 100" regardless of difficulty; now uses actual range
 st.info(
-    f"Guess a number between 1 and 100. "
+    f"Guess a number between {low} and {high}. "
     f"Attempts left: {attempt_limit - st.session_state.attempts}"
 )
 
@@ -133,7 +128,8 @@ with col3:
 
 if new_game:
     st.session_state.attempts = 0
-    st.session_state.secret = random.randint(1, 100)
+    # FIXME: new game was using hardcoded randint(1, 100) instead of the difficulty range
+    st.session_state.secret = random.randint(low, high)
     st.success("New game started.")
     st.rerun()
 
@@ -155,11 +151,8 @@ if submit:
     else:
         st.session_state.history.append(guess_int)
 
-        if st.session_state.attempts % 2 == 0:
-            secret = str(st.session_state.secret)
-        else:
-            secret = st.session_state.secret
-
+        # FIXME: on even attempts, secret was cast to str, breaking numeric comparison and causing wrong hints
+        secret = st.session_state.secret
         outcome, message = check_guess(guess_int, secret)
 
         if show_hint:
