@@ -40,13 +40,13 @@ Describe your fixed game in numbered steps so a reader can follow along without 
 5. <!-- Add more steps as needed -->
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
-
+![alt text](<Screenshot 2026-06-22 at 4.12.24 PM.png>)
 ## 🧪 Test Results
 
 ```
 # Paste your pytest output here, e.g.:
 # pytest tests/
-# ========================= X passed in 0.XXs =========================
+# =========/var/folders/rg/23clw8wd6b589r_gl82l0tjh0000gn/T/TemporaryItems/NSIRD_screencaptureui_aC358R/Screenshot 2026-06-22 at 4.09.19 PM.png================ X passed in 0.XXs =========================
 ```
 
 ## 🚀 Stretch Features
