@@ -239,14 +239,6 @@ The full repository suite currently reports **15 passed and 3 failed**. The thre
 
 What worked well was using labeled cases as executable retrieval checks; this immediately exposed whether ranking returned the intended record. The main lesson was that metadata bonuses should improve ranking but should not turn an unrelated query into a relevant match.
 
-## Reflection
-
-This extension reinforced that adding AI is not only about making a model call. Useful AI systems need traceable evidence, validation, explicit uncertainty, safe failures, and tests for the components surrounding the model. It also showed the value of checking AI suggestions against the actual repository: an earlier plan referred to “existing AI investigation logic,” but inspection showed that this project currently contains a guessing game and an unintegrated RAG foundation.
-
-One helpful AI suggestion was to begin with keyword retrieval instead of immediately adding embeddings and a vector database. The labeled tests confirmed that this simpler design retrieves the intended synthetic reports for the current corpus. A flawed assumption was that the existing application already had AI investigation logic available for integration; reading `app.py` and running the tests disproved that assumption.
-
-The system remains limited by its tiny synthetic corpus, exact-word matching, incomplete UI and generation integration, and unresolved legacy test failures. A complete responsible-AI reflection—including collaboration details and system limitations—belongs in the later required `model_card.md`; this short README reflection is only a project overview and is not a substitute for that deliverable.
-
 ## Next Steps
 
 1. Complete and standardize the original reusable game logic without losing regression coverage.
