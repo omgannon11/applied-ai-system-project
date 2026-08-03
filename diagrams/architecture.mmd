@@ -1,5 +1,16 @@
 flowchart TD
-    A[User Input] --> B[Input Processing]
-    B --> C[AI System]
-    C --> D[Validation and Guardrails]
-    D --> E[Final Output]
+    user[User Glitch Report] --> validation[Input Validation]
+    validation --> retrieval[Glitch Retrieval System]
+
+    knowledge[(Glitch Knowledge Base)] --> retrieval
+    retrieval --> reports[Relevant Glitch Reports]
+    reports --> investigation[AI Investigation]
+    validation --> investigation
+
+    investigation --> guardrails[Guardrails and Output Validation]
+    guardrails --> result[Investigation Result]
+    guardrails --> log[(Reliability Log)]
+
+    cases[Test Cases] --> evaluation[Evaluation System]
+    evaluation --> retrieval
+    evaluation --> investigation

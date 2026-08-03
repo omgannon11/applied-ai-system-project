@@ -1,0 +1,70 @@
+[
+  {
+    "id": "glitch-001",
+    "game": "Example Game",
+    "platform": "PC",
+    "category": "graphics",
+    "symptoms": [
+      "textures appear black",
+      "objects flicker",
+      "visual artifacts appear after changing settings"
+    ],
+    "possible_causes": [
+      "outdated graphics driver",
+      "corrupted shader cache",
+      "unsupported graphics setting"
+    ],
+    "recommended_steps": [
+      "restart the game",
+      "reset graphics settings",
+      "update the graphics driver",
+      "verify the game files"
+    ],
+    "source": "Instructor-created synthetic demonstration record"
+  },
+  {
+    "id": "glitch-002",
+    "game": "Example Game",
+    "platform": "PC",
+    "category": "save_state",
+    "symptoms": [
+      "progress disappears after loading a save",
+      "the game loads an older checkpoint",
+      "recent inventory changes are missing"
+    ],
+    "possible_causes": [
+      "save synchronization conflict",
+      "interrupted save operation",
+      "damaged local save data"
+    ],
+    "recommended_steps": [
+      "back up the save folder",
+      "compare local and synchronized save timestamps",
+      "disable synchronization before restoring a known-good backup"
+    ],
+    "source": "Instructor-created synthetic demonstration record"
+  },
+  {
+    "id": "glitch-003",
+    "game": "Example Game",
+    "platform": "PC",
+    "category": "mod_conflict",
+    "symptoms": [
+      "the game crashes after installing a mod",
+      "the crash occurs while loading a saved game",
+      "the game starts normally when mods are disabled"
+    ],
+    "possible_causes": [
+      "incompatible mod versions",
+      "conflicting load order",
+      "missing mod dependency"
+    ],
+    "recommended_steps": [
+      "back up the save data",
+      "disable recently installed mods",
+      "check mod dependencies and versions",
+      "enable mods one at a time"
+    ],
+    "source": "Instructor-created synthetic demonstration record"
+  }
+]

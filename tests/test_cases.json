@@ -1,0 +1,32 @@
+[
+  {
+    "id": "test-001",
+    "input": {
+      "game": "Example Game",
+      "platform": "PC",
+      "description": "Textures become black and objects flicker after changing graphics settings."
+    },
+    "expected_category": "graphics",
+    "expected_report_id": "glitch-001"
+  },
+  {
+    "id": "test-002",
+    "input": {
+      "game": "Example Game",
+      "platform": "PC",
+      "description": "My recent progress and inventory disappear when I load my save."
+    },
+    "expected_category": "save_state",
+    "expected_report_id": "glitch-002"
+  },
+  {
+    "id": "test-003",
+    "input": {
+      "game": "Example Game",
+      "platform": "PC",
+      "description": "The game crashes while loading after installing a mod, but starts with mods disabled."
+    },
+    "expected_category": "mod_conflict",
+    "expected_report_id": "glitch-003"
+  }
+]
